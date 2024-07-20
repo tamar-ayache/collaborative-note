@@ -1,64 +1,21 @@
-import { Routes, Route, Outlet, Link } from "react-router-dom";
-import Notes from "./components/Notes";
-import Login from "./components/Login";
+// App.js
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Login from './components/Login';
+import Notes from './components/Notes';
+import './App.css';
 
-export default function App() {
+function App() {
     return (
-        <div>
-
-            <Routes>
-                <Route path="/" element={<Layout />}>
-                    <Route index element={<Home />} />
-                    <Route path="notes" element={<Notes />} />
-                    <Route path="login" element={<Login />} />
-                    <Route path="*" element={<NoMatch />} />
-                </Route>
-            </Routes>
-        </div>
+        <Router>
+            <div className="App">
+                <Routes>
+                    <Route path="/" element={<Login />} />
+                    <Route path="/notes" element={<Notes />} />
+                </Routes>
+            </div>
+        </Router>
     );
 }
 
-function Layout() {
-    return (
-        <div>
-            <nav>
-                <ul>
-                    <li>
-                        <Link to="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link to="/login">Login</Link>
-                    </li>
-                    <li>
-                        <Link to="/notes">Notes</Link>
-                    </li>
-                    <li>
-                        <Link to="/nothing-here">Nothing Here</Link>
-                    </li>
-                </ul>
-            </nav>
-            <hr />
-            <Outlet />
-        </div>
-    );
-}
-
-function Home() {
-    return (
-        <div>
-            <h2>Home</h2>
-        </div>
-    );
-}
-
-
-function NoMatch() {
-    return (
-        <div>
-            <h2>Nothing to see here!</h2>
-            <p>
-                <Link to="/">Go to the home page</Link>
-            </p>
-        </div>
-    );
-}
+export default App;
