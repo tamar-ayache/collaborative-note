@@ -1,5 +1,5 @@
 # Collaborative Note-Taking App
-
+# Tamar Ayache
 This project is a simple collaborative note-taking app that allows multiple users to create, edit, and share notes in real-time. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
@@ -69,28 +69,18 @@ To learn React, check out the [React documentation](https://reactjs.org/).
     ```
 
 3. **Configure Firebase**:
-    - Add your Firebase configuration to your project. Create a file named `firebase.js` in the `src` directory and add the following code:
+    - Add your Firebase configuration to your project. Create a file named `config.json` in the `src` directory and add the following code:
 
-    ```javascript
-    import { initializeApp } from "firebase/app";
-    import { getAuth } from "firebase/auth";
-    import { getFirestore } from "firebase/firestore";
-
-    const firebaseConfig = {
-        apiKey: "YOUR_API_KEY",
-        authDomain: "YOUR_AUTH_DOMAIN",
-        projectId: "YOUR_PROJECT_ID",
-        storageBucket: "YOUR_STORAGE_BUCKET",
-        messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-        appId: "YOUR_APP_ID",
-        measurementId: "YOUR_MEASUREMENT_ID"
-    };
-
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const db = getFirestore(app);
-
-    export { auth, db };
+    ```json
+    {  
+        "apiKey": "YOUR_API_KEY",
+        "authDomain": "YOUR_AUTH_DOMAIN",
+        "projectId": "YOUR_PROJECT_ID",
+        "storageBucket": "YOUR_STORAGE_BUCKET",
+        "messagingSenderId": "YOUR_MESSAGING_SENDER_ID",
+        "appId": "YOUR_APP_ID",
+        "measurementId": "YOUR_MEASUREMENT_ID"
+    }
     ```
 
 ## Usage
