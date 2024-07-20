@@ -9,20 +9,39 @@ const Login = () => {
     const navigate = useNavigate();
 
     const handleRegister = async () => {
+        if (!email || !password) {
+            alert('Email and password are required.');
+            return;
+        }
+
         try {
             await createUserWithEmailAndPassword(auth, email, password);
+            alert('User registered successfully');
+            console.log('Registered user:', email);
             navigate('/notes');
         } catch (error) {
             console.error("Error registering user: ", error);
+            alert(`Registration Error: ${error.message}`);
         }
     };
 
     const handleLogin = async () => {
+        if (!email || !password) {
+            alert('Email and password are required.');
+            return;
+        }
+
+        console.log('Login Attempt:', email, password); // הוספת הדפסה לקונסול
+
         try {
             await signInWithEmailAndPassword(auth, email, password);
+            alert('User logged in successfully');
+            console.log('Logged in user:', email);
             navigate('/notes');
         } catch (error) {
             console.error("Error logging in user: ", error);
+            console.log('Login Error Details:', error.code, error.message);
+            alert(`Login Error: ${error.message}`);
         }
     };
 
