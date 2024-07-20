@@ -2,7 +2,7 @@ import { initializeApp } from "firebase/app";
 import { getAuth } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 
-// הגדרות Firebase שלך
+// הגדרות Firebase שלך :)
 const firebaseConfig = {
     apiKey: "AIzaSyAfMdP50KnBW-zKlbFMByC1IdfJRpWzw-E",
     authDomain: "tamar-7ed4a.firebaseapp.com",
